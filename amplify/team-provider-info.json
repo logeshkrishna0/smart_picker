@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-smartpicker-dev-92511-authRole",
+      "UnauthRoleArn": "arn:aws:iam::704697174566:role/amplify-smartpicker-dev-92511-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::704697174566:role/amplify-smartpicker-dev-92511-authRole",
+      "Region": "ap-southeast-2",
+      "DeploymentBucketName": "amplify-smartpicker-dev-92511-deployment",
+      "UnauthRoleName": "amplify-smartpicker-dev-92511-unauthRole",
+      "StackName": "amplify-smartpicker-dev-92511",
+      "StackId": "arn:aws:cloudformation:ap-southeast-2:704697174566:stack/amplify-smartpicker-dev-92511/ca60d360-c425-11ec-9451-06fab2848c5e",
+      "AmplifyAppId": "d21k80yebi136b"
+    },
+    "categories": {
+      "auth": {
+        "smartpicker4198844741988447": {}
+      }
+    }
+  }
+}
