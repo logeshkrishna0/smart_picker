@@ -10,7 +10,8 @@
           "attributes": [
             "UserPoolId",
             "AppClientIDWeb",
-            "AppClientID"
+            "AppClientID",
+            "IdentityPoolId"
           ]
         }
       ]
@@ -45,6 +46,13 @@
           "EMAIL"
         ]
       }
+    }
+  },
+  "storage": {
+    "s3704e4d51": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": []
     }
   }
 }
