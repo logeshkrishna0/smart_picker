@@ -45,32 +45,30 @@ class UploadImage extends React.Component {
     }
 
     onChange(e) {
-        const file = e.target.files;
+        const file = e.target.files[0];
         console.log(file);
-        for (let allimages of file) {
-            Storage.put(allimages.name, allimages, {
-                contentType: 'image/png'
-            }).then(() => {
-                this.findImageLabels(allimages).then(labels => {
-                    this.setState({ file: URL.createObjectURL(allimages) })
+        Storage.put(file.name, file, {
+            contentType: 'image/png'
+        }).then(() => {
+            this.findImageLabels(file).then(labels => {
+                this.setState({ file: URL.createObjectURL(file) })
 
-                    const image = {
-                        name: allimages.name,
-                        labels: labels,
-                        allimages: {
-                            bucket: awsExports.aws_user_files_s3_bucket,
-                            region: awsExports.aws_user_files_s3_bucket_region,
-                            key: file.name
-                        }
+                const image = {
+                    name: file.name,
+                    labels: labels,
+                    file: {
+                        bucket: awsExports.aws_user_files_s3_bucket,
+                        region: awsExports.aws_user_files_s3_bucket_region,
+                        key: file.name
                     }
+                }
 
-                    this.addImageToDB(image);
-                    console.log('added completed')
-                })
+                this.addImageToDB(image);
+                console.log('added completed')
             })
+        })
 
-                .catch(err => console.log(err));
-        }
+            .catch(err => console.log(err));
     }
 
     render() {
