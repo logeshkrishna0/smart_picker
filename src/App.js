@@ -8,6 +8,7 @@ import { createBrowserHistory as createHistory } from 'history'
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Authenticator } from '@aws-amplify/ui-react'
+import { AmazonAIPredictionsProvider } from '@aws-amplify/predictions';
 import '@aws-amplify/ui-react/styles.css'
 import './App.css';
 import HomePage from './Components/Homepage';
@@ -15,7 +16,8 @@ import UploadImage from './Components/uploadImage';
 import Amplify from 'aws-amplify'
 import config from './aws-exports'
 
-Amplify.configure(config)
+Amplify.configure(config);
+Amplify.addPluggable(new AmazonAIPredictionsProvider());
 
 const history = createHistory();
 
