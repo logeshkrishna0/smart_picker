@@ -78,7 +78,7 @@ class UploadImage extends React.Component {
             <div className="UploadImage">
                 <div>
                     <p>Please select an image to upload</p>
-                    <input type="file" name="file[]" multiple onChange={(evt) => this.onChange(evt)} />
+                    <input type="file" onChange={(evt) => this.onChange(evt)} />
                 </div>
                 <div>
                     <img src={this.state.file} />
